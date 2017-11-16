@@ -27,10 +27,10 @@ public class PageFrafment extends Fragment {
         View view = inflater.inflate(R.layout.page_fragment_layout, container, false);
         // Inflate the layout for this fragment
 
-        textView = (TextView) view.findViewById(R.id.textView);//instancia text view
+        textView = (TextView) view.findViewById(R.id.txtLifeHack);//instancia text view
         Bundle bundle =getArguments();
         String message = Integer.toString(bundle.getInt("count"));
-        textView.setText("this is the"+message+"swipe view pagee..peaje pake lo goze oe");
+        textView.setText("Life Hack n°"+message);
         return  view;
 
     }
