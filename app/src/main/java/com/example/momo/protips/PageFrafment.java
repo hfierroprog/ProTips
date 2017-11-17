@@ -46,9 +46,7 @@ public class PageFrafment extends Fragment {
                 .error(R.mipmap.ic_launcher)
                 .fit()
                 .centerInside()
-                .into(imgLifeHack);
-
-
+                .into(imgLifeHack)
 
         return  view;
     }
