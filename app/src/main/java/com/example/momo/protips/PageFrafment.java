@@ -1,6 +1,7 @@
 package com.example.momo.protips;
 
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.List;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,9 +22,12 @@ public class PageFrafment extends Fragment {
     //Declaramos los componentes
     TextView txtLifeHack;
     ImageView imgLifeHack;
+    List<String> textos;
+    List<String> links;
 
-    public PageFrafment() {
-
+    public PageFrafment(List<String> textos,List<String> links) {
+        this.textos = textos;
+        this.links = links;
     }
 
 
@@ -34,21 +40,28 @@ public class PageFrafment extends Fragment {
 
         txtLifeHack = (TextView) view.findViewById(R.id.txtLifeHack);//instancia text view
         Bundle bundle =getArguments();
-        String message = Integer.toString(bundle.getInt("count"));
-        txtLifeHack.setText("Life Hack n°"+message);
+        int pos = bundle.getInt("count");
+
+        String txtlife = textos.get(pos);
+        String linklife = links.get(pos);
+
+        txtLifeHack.setText(txtlife);
+
+        Typeface fuente = Typeface.createFromAsset(getContext().getAssets(), "Pacifico-Regular.ttf");
+
+        txtLifeHack.setTypeface(fuente);
 
         //Instanciar ImageView
         imgLifeHack = (ImageView) view.findViewById(R.id.imgLifeHack);
 
         //Poner imagen online
         Picasso.with(getContext())
-                .load("https://thumbs.dreamstime.com/x/sistema-binario-8193308.jpg")
+                .load(linklife)
                 .error(R.mipmap.ic_launcher)
                 .fit()
                 .centerInside()
-                .into(imgLifeHack)
+                .into(imgLifeHack);
 
         return  view;
     }
-
 }

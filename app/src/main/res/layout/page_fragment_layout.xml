@@ -8,18 +8,18 @@
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:text="Texto!!"
         android:textColor="@color/Texto"
         android:layout_gravity="center|top"
         android:id="@+id/txtLifeHack"
-        android:textSize="24dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         />
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:id="@+id/imgLifeHack"
         />
 </FrameLayout>
