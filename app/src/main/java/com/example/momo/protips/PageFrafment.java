@@ -52,7 +52,7 @@ public class PageFrafment extends Fragment {
         txtLifeHack.setText(txtlife);
 
         //Creamos una nueva fuente personalizada
-        Typeface fuente = Typeface.createFromAsset(getContext().getAssets(), "Pacifico-Regular.ttf");
+        Typeface fuente = Typeface.createFromAsset(getContext().getAssets(), "VollkornSC-Regular.ttf");
 
         //Se la asignamos a nuestro texto
         txtLifeHack.setTypeface(fuente);
