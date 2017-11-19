@@ -25,6 +25,7 @@ public class PageFrafment extends Fragment {
     List<String> textos;
     List<String> links;
 
+    //Se reciben las listas mediante el metodo constructor y las asignamos
     public PageFrafment(List<String> textos,List<String> links) {
         this.textos = textos;
         this.links = links;
@@ -39,16 +40,21 @@ public class PageFrafment extends Fragment {
         // Inflate the layout for this fragment
 
         txtLifeHack = (TextView) view.findViewById(R.id.txtLifeHack);//instancia text view
+        //obtener la posicion actual
         Bundle bundle =getArguments();
         int pos = bundle.getInt("count");
 
+        //Obtenemos el texto y el link segun posicion
         String txtlife = textos.get(pos);
         String linklife = links.get(pos);
 
+        //Asignamos el texto recien obtenido a la vista
         txtLifeHack.setText(txtlife);
 
+        //Creamos una nueva fuente personalizada
         Typeface fuente = Typeface.createFromAsset(getContext().getAssets(), "Pacifico-Regular.ttf");
 
+        //Se la asignamos a nuestro texto
         txtLifeHack.setTypeface(fuente);
 
         //Instanciar ImageView
