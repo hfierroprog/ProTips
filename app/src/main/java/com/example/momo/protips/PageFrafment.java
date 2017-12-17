@@ -22,13 +22,11 @@ public class PageFrafment extends Fragment {
     //Declaramos los componentes
     TextView txtLifeHack;
     ImageView imgLifeHack;
-    List<String> textos;
-    List<String> links;
+    List<Tip> lista;
 
     //Se reciben las listas mediante el metodo constructor y las asignamos
-    public PageFrafment(List<String> textos,List<String> links) {
-        this.textos = textos;
-        this.links = links;
+    public PageFrafment(List<Tip> lista) {
+        this.lista = lista;
     }
 
 
@@ -45,8 +43,8 @@ public class PageFrafment extends Fragment {
         int pos = bundle.getInt("count");
 
         //Obtenemos el texto y el link segun posicion
-        String txtlife = textos.get(pos);
-        String linklife = links.get(pos);
+        String txtlife = lista.get(pos).getTxt_tip();
+        String linklife = lista.get(pos).getImg_tip();
 
         //Asignamos el texto recien obtenido a la vista
         txtLifeHack.setText(txtlife);

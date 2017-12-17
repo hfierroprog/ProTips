@@ -8,20 +8,18 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import java.util.List;
 
 public class SwipeAdapter extends FragmentStatePagerAdapter{
-    private List<String> textos;
-    private List<String> links;
+    private List<Tip> lista;
 
 
     //Se reciben y se almacenan ambas listas (textos,links)
-    public SwipeAdapter(FragmentManager fm,List<String> textos,List<String> links) {
+    public SwipeAdapter(FragmentManager fm,List<Tip> lista) {
         super(fm);
-        this.textos = textos;
-        this.links = links;
+        this.lista = lista;
     }
 
     @Override
     public Fragment getItem(int i) {
-        Fragment fragment = new PageFrafment(textos,links);
+        Fragment fragment = new PageFrafment(lista);
         //Mandamos la posicion mediante bundle
         Bundle bundle = new Bundle();
         bundle.putInt("count",i);
@@ -31,6 +29,6 @@ public class SwipeAdapter extends FragmentStatePagerAdapter{
 
     @Override
     public int getCount() {
-        return textos.size();
+        return lista.size();
     }
 }
