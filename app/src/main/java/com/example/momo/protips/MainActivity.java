@@ -19,6 +19,7 @@ public class MainActivity extends FragmentActivity implements AsyncResponse {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         PostResponseAsyncTask task = new PostResponseAsyncTask(this);
         task.execute("http://webeasy.cl/webservice/protips/ver.php");
 
@@ -31,7 +32,8 @@ public class MainActivity extends FragmentActivity implements AsyncResponse {
         viewPager = (ViewPager) findViewById(R.id.view_pager);
 
         //Mandamos las listas a la clase swipeadapter
-        SwipeAdapter swipeAdapter = new SwipeAdapter(getSupportFragmentManager(),lista);
+        SwipeAdapter swipeAdapter = new SwipeAdapter(getSupportFragmentManager(), lista);
         viewPager.setAdapter(swipeAdapter);
     }
 }
+
